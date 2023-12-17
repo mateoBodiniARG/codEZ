@@ -21,6 +21,7 @@ const FontsListContainer = () => {
           where("categoria", "==", "fuentes")
         );
         const queryContent = await getDocs(q);
+        console.log(queryContent);
         const data = queryContent.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
