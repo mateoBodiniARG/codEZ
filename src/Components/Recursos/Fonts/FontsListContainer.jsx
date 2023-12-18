@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   collection,
   getDocs,
@@ -8,10 +7,12 @@ import {
   where,
 } from "firebase/firestore";
 import FontsList from "./FontsList";
+import LoadingInfo from "./LoadingInfo";
 
 const FontsListContainer = () => {
   const [fontsCol, setFontsCol] = useState([]);
   const db = getFirestore();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const obtenerFonts = async () => {
@@ -21,26 +22,40 @@ const FontsListContainer = () => {
           where("categoria", "==", "fuentes")
         );
         const queryContent = await getDocs(q);
-        console.log(queryContent);
         const data = queryContent.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
         setFontsCol(data);
-        console.log(data);
+        setLoading(false);
       } catch (error) {
         console.log("se ha producido un error", error);
       }
     };
     obtenerFonts();
-  }, [db]);
+  }, []);
 
   return (
     <section>
       <div className="text-center font-bold text-white text-2xl mt-2">
-        <h1>Fuentes</h1>
+        <h1>Explora la seccion Fuentes</h1>
       </div>
-      <FontsList fonts={fontsCol} />
+      {loading ? (
+        <section className="md2:mx-3 sm:mx-3 md2:my-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto max-w-screen-xl mt-5 md2:place-content-center">
+            {[1, 2, 3].map((key) => (
+              <div
+                key={key}
+                className="bg-black bg-opacity-80 p-4 rounded-md shadow-md transition duration-300 ease-in-out overflow-hidden border border-gray-800 hover:border-violet-500 hover:shadow-lg hover:border-opacity-100 hover:bg-gray-900"
+              >
+                <LoadingInfo />
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : (
+        <FontsList fonts={fontsCol} />
+      )}
     </section>
   );
 };

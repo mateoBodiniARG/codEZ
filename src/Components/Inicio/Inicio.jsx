@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { IconContext } from "react-icons";
 import { PiCaretDoubleDown } from "react-icons/pi";
 import { recursosObj } from "../recursosObj";
+import "./Inicio.css";
 const Inicio = () => {
   return (
     <div className="text-white bg-gray-950">
@@ -57,7 +58,7 @@ const Inicio = () => {
         </section>
       </div>
 
-      {/* <footer className="bg-gray-800 text-white p-4 text-center flex items-center justify-center flex-col ">
+      {/* <footer className="bg-gray-800 text-white p-4 text-center flex items-center justify-center flex-col">
         <p>&copy; 2023 codEZ. Todos los derechos reservados.</p>
         <p>
           Desarrollado por{" "}
