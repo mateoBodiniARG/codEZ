@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Info from "./Components/Inicio/Info";
 import NotFound from "./Components/NotFound/NotFound";
 import FontsListContainer from "./Components/Recursos/Fonts/FontsListContainer";
+import AddResources from "./Components/AddResources/AddResources";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/info" element={<Info />} />
+          <Route path="/agregar-recursos" element={<AddResources />} />
           <Route path="/fuentes" element={<FontsListContainer />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
