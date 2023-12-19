@@ -4,21 +4,28 @@ import { IconContext } from "react-icons";
 import { PiCaretDoubleDown } from "react-icons/pi";
 import { recursosObj } from "../recursosObj";
 import "./Inicio.css";
+import Navbar from "../Navbar/Navbar";
 const Inicio = () => {
   return (
     <div className="text-white bg-gray-950 bg-gradient-personal">
       <div className="gradient-container"></div>
+      <Navbar />
       <div className="relative overflow-hidden h-screen ">
         <div className="flex items-center justify-center h-full flex-col">
           <div className="text-center">
-            <h1 className="text-6xl font-extrabold relative z-10 mb-4 xs:m-2">
+            <h1 className="text-6xl font-extrabold relative mb-4 xs:m-2 xs:text-5xl">
               ¡Bienvenido a codEZ!
             </h1>
-            <p className="text-gray-500 max-w-lg mx-auto mb-6 leading-relaxed xs:mx-2">
-              Una plataforma que proporciona recursos y herramientas para
-              facilitar el desarrollo en diseño y programación. Nuestra misión
-              es hacer que el aprendizaje y la creación sean más accesibles y
-              emocionantes.
+            <p className="text-gray-500 max-w-lg mx-auto mb-6 leading-relaxed xs:mx-2  xs:text-base font-medium">
+              Recursos para simplificar el desarrollo en diseño y programación,
+              haciendo que aprender y crear sean{" "}
+              <mark class="px-2 text-white  rounded bg-violet-500">
+                <b>Accesibles</b>
+              </mark>{" "}
+              y{" "}
+              <mark class="px-2 text-white  rounded bg-violet-500">
+                <b>Emocionantes</b>
+              </mark>{" "}
             </p>
           </div>
 
@@ -26,10 +33,15 @@ const Inicio = () => {
         </div>
       </div>
 
-      <div className="h-screen">
-        <section className="xs:py-4">
+      <div className="h-screen xs:h-full xs:py-3">
+        <section className="text-center">
+          <div className="inline-block rounded-lg bg-gradient-to-r from-[#FF0080] to-[#9455d4] px-3 py-1 text-sm font-semibold">
+            Recursos Destacados
+          </div>
           <div className="font-bold text-4xl text-center mt-3 mb-6">
-            <h2>Explora los recursos disponibles</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+              Aprender. Codear. Innovar.
+            </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto max-w-screen-lg xs:mx-3">
             <IconContext.Provider value={{ size: "3em" }}>

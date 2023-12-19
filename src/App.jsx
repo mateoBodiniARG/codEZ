@@ -16,9 +16,9 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <nav>
+        {/* <nav>
           <Navbar />
-        </nav>
+        </nav> */}
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/info" element={<Info />} />
