@@ -10,7 +10,7 @@ export default {
       },
     },
     fontFamily: {
-      sans: ["Roboto", "sans-serif"],
+      sans: ["Inter", "sans-serif"],
     },
   },
   plugins: [],

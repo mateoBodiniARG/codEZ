@@ -6,26 +6,27 @@ import {
   query,
   where,
 } from "firebase/firestore";
-import FontsList from "./FontsList";
-import LoadingInfo from "./LoadingInfo";
-const FontsListContainer = () => {
-  const [fontsCol, setFontsCol] = useState([]);
-  const db = getFirestore();
+import AiList from "./AiList";
+import LoadingInfo from "../Fonts/LoadingInfo";
+
+const AiListContainer = () => {
+  const [aiCol, setAiCol] = useState([]);
   const [loading, setLoading] = useState(true);
+  const db = getFirestore();
 
   useEffect(() => {
     const obtenerFonts = async () => {
       try {
         const q = query(
           collection(db, "Recursos"),
-          where("categoria", "==", "fuentes")
+          where("categoria", "==", "ai")
         );
         const queryContent = await getDocs(q);
         const data = queryContent.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
-        setFontsCol(data);
+        setAiCol(data);
         setLoading(false);
       } catch (error) {
         console.log("se ha producido un error", error);
@@ -33,13 +34,11 @@ const FontsListContainer = () => {
     };
     obtenerFonts();
   }, []);
-
   return (
     <section>
-      <div>
-      </div>
+      <div></div>
       <div className="text-center font-bold text-white text-2xl mt-2">
-        <h1>Explora la seccion Fuentes</h1>
+        <h1>Explora la seccion herramnientas Ai </h1>
       </div>
       {loading ? (
         <section className="md2:mx-3 sm:mx-3 md2:my-3">
@@ -55,10 +54,10 @@ const FontsListContainer = () => {
           </div>
         </section>
       ) : (
-        <FontsList fonts={fontsCol} />
+        <AiList ai={aiCol} />
       )}
     </section>
   );
 };
 
-export default FontsListContainer;
+export default AiListContainer;

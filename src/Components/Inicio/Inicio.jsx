@@ -6,13 +6,9 @@ import { recursosObj } from "../recursosObj";
 import "./Inicio.css";
 const Inicio = () => {
   return (
-    <div className="text-white bg-gray-950">
+    <div className="text-white bg-gray-950 bg-gradient-personal">
+      <div className="gradient-container"></div>
       <div className="relative overflow-hidden h-screen ">
-        <div className="absolute w-32 h-32 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-xl opacity-50 top-1/4 right-1/4"></div>
-        <div className="absolute w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-xl opacity-50 top-1/4 left-1/4"></div>
-        <div className="absolute w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-xl opacity-50 bottom-1/4 right-1/4"></div>
-        <div className="absolute w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-xl opacity-50 bottom-1/4 left-1/4"></div>
-
         <div className="flex items-center justify-center h-full flex-col">
           <div className="text-center">
             <h1 className="text-6xl font-extrabold relative z-10 mb-4 xs:m-2">

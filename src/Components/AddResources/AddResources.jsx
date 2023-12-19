@@ -17,8 +17,9 @@ const AgregarRecurso = () => {
     descripcion: "",
     img: "",
     link: "",
-    isFree: false,
+    free: false,
   });
+  const [error, setError] = useState("");
 
   const [selectedCategory, setSelectedCategory] = useState("");
   const [categories, setCategories] = useState([]);
@@ -46,13 +47,13 @@ const AgregarRecurso = () => {
     };
 
     obtenerCategorias();
-  }, [db]);
+  }, []);
 
   // Cargar nuevo recurso a la base de datos de firebase
   const manejoSubmit = async (e) => {
     e.preventDefault();
     // Desestructurar el objeto recurso para obtener sus propiedades y valores para poder enviarlos a la base de datos de firebase con setDoc
-    const { titulo, descripcion, img, link, isFree } = resource;
+    const { titulo, descripcion, img, link, free } = resource;
     try {
       await setDoc(doc(db, "Recursos", titulo), {
         titulo,
@@ -60,7 +61,7 @@ const AgregarRecurso = () => {
         img,
         link,
         categoria: selectedCategory,
-        isFree,
+        free,
       });
 
       console.log("Recurso agregado");
@@ -71,39 +72,66 @@ const AgregarRecurso = () => {
     }
   };
 
-  // Funciones de manejo de cambios
   const handleTitle = (e) => {
-    setResource((prevResource) => ({
-      ...prevResource,
-      titulo: e.target.value,
-    }));
+    if (e.target.value.trim() === "") {
+      setError("El título es obligatorio");
+      return;
+    } else {
+      setResource((prevResource) => ({
+        ...prevResource,
+        titulo: e.target.value,
+      }));
+      setError("");
+    }
   };
 
   const handleDescription = (e) => {
-    setResource((prevResource) => ({
-      ...prevResource,
-      descripcion: e.target.value,
-    }));
+    // si esta vacio mostrar mensaje de error
+    if (e.target.value.trim() === "") {
+      setError("La descripción es obligatoria");
+      return;
+    } else {
+      setResource((prevResource) => ({
+        ...prevResource,
+        descripcion: e.target.value,
+      }));
+      setError("");
+    }
   };
 
   const handleImage = (e) => {
-    setResource((prevResource) => ({
-      ...prevResource,
-      img: e.target.value,
-    }));
+    // si esta vacio mostrar mensaje de error
+    if (e.target.value.trim() === "") {
+      setError("La imagen es obligatoria");
+      return;
+    } else {
+      setResource((prevResource) => ({
+        ...prevResource,
+        img: e.target.value,
+      }));
+      setError("");
+    }
   };
 
   const handleLink = (e) => {
-    setResource((prevResource) => ({
-      ...prevResource,
-      link: e.target.value,
-    }));
+    // si esta vacio mostrar mensaje de error
+    if (e.target.value.trim() === "") {
+      setError("El link es obligatorio");
+      return;
+    } else {
+      setResource((prevResource) => ({
+        ...prevResource,
+        link: e.target.value,
+      }));
+      setError("");
+    }
   };
 
   const handleFree = (e) => {
+    // si esta vacio mostrar mensaje de error
     setResource((prevResource) => ({
       ...prevResource,
-      isFree: e.target.value === "true",
+      free: e.target.value,
     }));
   };
 
@@ -118,6 +146,11 @@ const AgregarRecurso = () => {
             <form className="w-full max-w-lg">
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full px-3 md:mb-0">
+                  {error && (
+                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-3">
+                      <span className="block sm:inline">{error}</span>
+                    </div>
+                  )}
                   <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2">
                     {" "}
                     Título del recurso{" "}
@@ -194,7 +227,7 @@ const AgregarRecurso = () => {
                   <select
                     className="block bg-slate-900 text-white border border-slate-700 rounded py-3 px-4 mb-5 leading-tight"
                     onChange={handleFree}
-                    value={String(resource.isFree)}
+                    value={resource.free ? "true" : "false"}
                   >
                     <option value="true">Gratis</option>
                     <option value="false">De pago</option>
