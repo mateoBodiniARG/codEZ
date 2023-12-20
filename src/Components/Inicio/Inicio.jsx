@@ -5,6 +5,7 @@ import { PiCaretDoubleDown } from "react-icons/pi";
 import { recursosObj } from "../recursosObj";
 import "./Inicio.css";
 import Navbar from "../Navbar/Navbar";
+import { motion } from "framer-motion";
 const Inicio = () => {
   return (
     <div className="text-white bg-gray-950 bg-gradient-personal">
@@ -12,22 +13,29 @@ const Inicio = () => {
       <Navbar />
       <div className="relative overflow-hidden h-screen ">
         <div className="flex items-center justify-center h-full flex-col">
-          <div className="text-center">
-            <h1 className="text-6xl font-extrabold relative mb-4 xs:m-2 xs:text-5xl">
-              ¡Bienvenido a codEZ!
-            </h1>
-            <p className="text-gray-500 max-w-lg mx-auto mb-6 leading-relaxed xs:mx-2  xs:text-base font-medium">
-              Recursos para simplificar el desarrollo en diseño y programación,
-              haciendo que aprender y crear sean{" "}
-              <mark class="px-2 text-white  rounded bg-violet-500">
-                <b>Accesibles</b>
-              </mark>{" "}
-              y{" "}
-              <mark class="px-2 text-white  rounded bg-violet-500">
-                <b>Emocionantes</b>
-              </mark>{" "}
-            </p>
-          </div>
+          <motion.div
+            // transicion de fade arriba a abajo con framer motion
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <div className="text-center">
+              <h1 className="text-6xl font-extrabold relative mb-4 xs:m-2 xs:text-5xl">
+                ¡Bienvenido a codEZ!
+              </h1>
+              <p className="text-gray-500 max-w-lg mx-auto mb-6 leading-relaxed xs:mx-2  xs:text-base font-medium">
+                Recursos para simplificar el desarrollo en diseño y
+                programación, haciendo que aprender y crear sean{" "}
+                <mark class="px-2 text-white  rounded bg-violet-500">
+                  <b>Accesibles</b>
+                </mark>{" "}
+                y{" "}
+                <mark class="px-2 text-white  rounded bg-violet-500">
+                  <b>Emocionantes</b>
+                </mark>{" "}
+              </p>
+            </div>
+          </motion.div>
 
           <PiCaretDoubleDown className="h-7 w-7 mt-7 animate-bounce" />
         </div>
