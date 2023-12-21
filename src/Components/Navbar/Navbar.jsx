@@ -2,7 +2,6 @@ import React from "react";
 import codEZicon from "../../assets/codEZicon.png";
 import { FaCircleInfo } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import Fade from "react-reveal/Fade";
 
 const Navbar = () => {
   return (
