@@ -5,7 +5,8 @@ import { PiCaretDoubleDown } from "react-icons/pi";
 import { recursosObj } from "../recursosObj";
 import "./Inicio.css";
 import Navbar from "../Navbar/Navbar";
-import { motion } from "framer-motion";
+import Fade from "react-reveal/Fade";
+
 const Inicio = () => {
   return (
     <div className="text-white bg-gray-950 bg-gradient-personal">
@@ -13,29 +14,20 @@ const Inicio = () => {
       <Navbar />
       <div className="relative overflow-hidden h-screen ">
         <div className="flex items-center justify-center h-full flex-col">
-          <motion.div
-            // transicion de fade arriba a abajo con framer motion
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <div className="text-center">
-              <h1 className="text-6xl font-extrabold relative mb-4 xs:m-2 xs:text-5xl">
+          <div className="text-center">
+            <Fade cascade down>
+              <h1 className="text-6xl font-extrabold relative mb-4 xs:m-2 xs:text-3xl">
                 ¡Bienvenido a codEZ!
               </h1>
-              <p className="text-gray-500 max-w-lg mx-auto mb-6 leading-relaxed xs:mx-2  xs:text-base font-medium">
+            </Fade>
+            <Fade cascade down>
+              <p className="text-gray-500 max-w-lg mx-auto mb-6 xs:mx-4 xs:text-xs xs:font-bold font-medium">
                 Recursos para simplificar el desarrollo en diseño y
-                programación, haciendo que aprender y crear sean{" "}
-                <mark class="px-2 text-white  rounded bg-violet-500">
-                  <b>Accesibles</b>
-                </mark>{" "}
-                y{" "}
-                <mark class="px-2 text-white  rounded bg-violet-500">
-                  <b>Emocionantes</b>
-                </mark>{" "}
+                programación, haciendo que aprender y crear sean Accesibles y
+                Emocionantes
               </p>
-            </div>
-          </motion.div>
+            </Fade>
+          </div>
 
           <PiCaretDoubleDown className="h-7 w-7 mt-7 animate-bounce" />
         </div>
@@ -43,31 +35,33 @@ const Inicio = () => {
 
       <div className="h-screen xs:h-full xs:py-3">
         <section className="text-center">
-          <div className="inline-block rounded-lg bg-gradient-to-r from-[#FF0080] to-[#9455d4] px-3 py-1 text-sm font-semibold">
-            Recursos Destacados
-          </div>
+          <Fade bottom cascade>
+            <div className="inline-block rounded-lg bg-gradient-to-r from-[#FF0080] to-[#9455d4] px-3 py-1 text-sm font-semibold">
+              Recursos Destacados
+            </div>
+          </Fade>
           <div className="font-bold text-4xl text-center mt-3 mb-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Aprender. Codear. Innovar.
-            </h2>
+            <Fade bottom cascade>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                Aprender. Codear. Innovar.
+              </h2>
+            </Fade>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto max-w-screen-lg xs:mx-3">
             <IconContext.Provider value={{ size: "3em" }}>
               {recursosObj.recursos.map((recurso, index) => (
-                <Link
-                  to={recurso.link}
-                  key={index}
-                  className="hover:border-blue-500 hover:shadow-lg transition duration-300 ease-in-out border border-gray-800 rounded-lg"
-                >
-                  <div className="bg-gray-900 p-4 rounded-lg shadow-md mb-4 cursor-pointer h-full hover:bg-slate-800 transition duration-300 ease-in-out">
-                    <div className="flex items-center justify-center p-2">
-                      {recurso.icono}
+                <div className="hover:border-blue-500 hover:shadow-lg transition duration-300 ease-in-out border border-gray-800 rounded-lg">
+                  <Link to={recurso.link} key={index}>
+                    <div className="bg-gray-900 p-4 rounded-lg shadow-md mb-4 cursor-pointer h-full hover:bg-slate-800 transition duration-300 ease-in-out">
+                      <div className="flex items-center justify-center p-2">
+                        {recurso.icono}
+                      </div>
+                      <h2 className="text-xl font-bold text-center">
+                        {recurso.nombre}
+                      </h2>
                     </div>
-                    <h2 className="text-xl font-bold text-center">
-                      {recurso.nombre}
-                    </h2>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               ))}
             </IconContext.Provider>
           </div>
