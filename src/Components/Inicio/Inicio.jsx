@@ -24,7 +24,7 @@ const Inicio = () => {
               <p className="text-gray-500 max-w-lg mx-auto mb-6 xs:mx-4 xs:text-xs xs:font-bold font-medium">
                 Recursos para simplificar el desarrollo en diseño y
                 programación, haciendo que aprender y crear sean Accesibles y
-                Emocionantes
+                Emocionantes.
               </p>
             </Fade>
           </div>
