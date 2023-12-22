@@ -20,10 +20,13 @@ const Inicio = () => {
                 ¡Bienvenido a codEZ!
               </h1>
             </Fade>
-            <p className="text-gray-500 max-w-lg mx-auto mb-6 xs:mx-4 xs:text-xs xs:font-bold font-medium">
-              Recursos para simplificar el desarrollo en diseño y programación,
-              haciendo que aprender y crear sean Accesibles y Emocionantes.
-            </p>
+            <Fade top cascade>
+              <p className="text-gray-500 max-w-lg mx-auto mb-6 xs:mx-4 xs:text-xs xs:font-bold font-medium">
+                Recursos para simplificar el desarrollo en diseño y
+                programación, haciendo que aprender y crear sean Accesibles y
+                Emocionantes.
+              </p>
+            </Fade>
           </div>
 
           <PiCaretDoubleDown className="h-7 w-7 mt-7 animate-bounce" />
