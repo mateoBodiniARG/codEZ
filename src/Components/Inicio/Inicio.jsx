@@ -5,6 +5,7 @@ import { PiCaretDoubleDown } from "react-icons/pi";
 import { recursosObj } from "../recursosObj";
 import "./Inicio.css";
 import Navbar from "../Navbar/Navbar";
+import { Fade } from "react-awesome-reveal";
 
 const Inicio = () => {
   return (
@@ -14,13 +15,18 @@ const Inicio = () => {
       <div className="relative overflow-hidden h-screen ">
         <div className="flex items-center justify-center h-full flex-col">
           <div className="text-center">
-            <h1 className="text-6xl font-extrabold relative mb-4 xs:m-2 xs:text-3xl">
-              ¡Bienvenido a codEZ!
-            </h1>
-            <p className="text-gray-500 max-w-lg mx-auto mb-6 xs:mx-4 xs:text-xs xs:font-bold font-medium">
-              Recursos para simplificar el desarrollo en diseño y programación,
-              haciendo que aprender y crear sean Accesibles y Emocionantes.
-            </p>
+            <Fade cascade>
+              <h1 className="text-6xl font-extrabold relative mb-4 xs:m-2 xs:text-3xl">
+                ¡Bienvenido a codEZ!
+              </h1>
+            </Fade>
+            <Fade cascade>
+              <p className="text-gray-500 max-w-lg mx-auto mb-6 xs:mx-4 xs:text-xs xs:font-bold font-medium">
+                Recursos para simplificar el desarrollo en diseño y
+                programación, haciendo que aprender y crear sean Accesibles y
+                Emocionantes.
+              </p>
+            </Fade>
           </div>
 
           <PiCaretDoubleDown className="h-7 w-7 mt-7 animate-bounce" />
