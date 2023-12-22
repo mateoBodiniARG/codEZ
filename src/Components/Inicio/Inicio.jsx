@@ -39,9 +39,11 @@ const Inicio = () => {
             Recursos Destacados
           </div>
           <div className="font-bold text-4xl text-center mt-3 mb-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Aprender. Codear. Innovar.
-            </h2>
+            <Fade top cascade>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                Aprender. Codear. Innovar.
+              </h2>
+            </Fade>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto max-w-screen-lg xs:mx-3">
             <IconContext.Provider value={{ size: "3em" }}>
