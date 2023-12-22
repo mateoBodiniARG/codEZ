@@ -51,12 +51,9 @@ const AgregarRecurso = () => {
   const handleFileUpload = async (files) => {
     const file = files[0];
     try {
-      // Subir el archivo a Firebase Storage
       const storageRef = ref(storage, `imagenes/${file.name}`);
       const snapshot = await uploadBytes(storageRef, file);
-      // Obtener la URL de descarga de la imagen
       const downloadURL = await getDownloadURL(snapshot.ref);
-      // Actualizar el estado con la URL de la imagen
       setResource((prevResource) => ({
         ...prevResource,
         img: downloadURL,
@@ -71,7 +68,6 @@ const AgregarRecurso = () => {
 
     const { titulo, descripcion, img, link, free } = resource;
 
-    // Verificar si la imagen ya se ha cargado y tiene una URL
     if (!img) {
       setError("La imagen es obligatoria");
       return;
@@ -108,7 +104,6 @@ const AgregarRecurso = () => {
   };
 
   const handleDescription = (e) => {
-    // si esta vacio mostrar mensaje de error
     if (e.target.value.trim() === "") {
       setError("La descripción es obligatoria");
       return;
