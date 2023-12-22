@@ -5,7 +5,8 @@ import { PiCaretDoubleDown } from "react-icons/pi";
 import { recursosObj } from "../recursosObj";
 import "./Inicio.css";
 import Navbar from "../Navbar/Navbar";
-import { Fade } from "react-awesome-reveal";
+import Fade from "react-reveal/Fade";
+
 const Inicio = () => {
   return (
     <div className="text-white bg-gray-950 bg-gradient-personal">
@@ -14,7 +15,7 @@ const Inicio = () => {
       <div className="relative overflow-hidden h-screen ">
         <div className="flex items-center justify-center h-full flex-col">
           <div className="text-center">
-            <Fade direction="down">
+            <Fade top cascade>
               <h1 className="text-6xl font-extrabold relative mb-4 xs:m-2 xs:text-3xl">
                 ¡Bienvenido a codEZ!
               </h1>
