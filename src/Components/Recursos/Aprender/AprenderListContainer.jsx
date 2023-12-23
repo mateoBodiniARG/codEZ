@@ -38,7 +38,7 @@ const AprenderListContainer = () => {
     <section>
       <div></div>
       <div className="text-center font-bold text-white text-2xl mt-2">
-        <h1>Explora la seccion Fuentes</h1>
+        <h1>Explora la seccion Aprender</h1>
       </div>
       {loading ? (
         <section className="md2:mx-3 sm:mx-3 md2:my-3">
