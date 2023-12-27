@@ -8,6 +8,7 @@ import {
 } from "firebase/firestore";
 import FontsList from "./FontsList";
 import LoadingInfo from "./LoadingInfo";
+
 const FontsListContainer = () => {
   const [fontsCol, setFontsCol] = useState([]);
   const db = getFirestore();
