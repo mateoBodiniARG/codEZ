@@ -37,7 +37,7 @@ const AiListContainer = () => {
   return (
     <section>
       <div></div>
-      <div className="text-center font-bold text-white text-2xl mt-2">
+      <div className="text-center font-bold text-white text-3xl mt-8 mb-4">
         <h1>Explora la seccion herramnientas Ai </h1>
       </div>
       {loading ? (

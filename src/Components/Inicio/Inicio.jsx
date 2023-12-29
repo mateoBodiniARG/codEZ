@@ -4,14 +4,12 @@ import { IconContext } from "react-icons";
 import { PiCaretDoubleDown } from "react-icons/pi";
 import { recursosObj } from "../recursosObj";
 import "./Inicio.css";
-import Navbar from "../Navbar/Navbar";
 import { Fade } from "react-awesome-reveal";
 
 const Inicio = () => {
   return (
     <div className="text-white bg-gray-950 bg-gradient-personal">
       <div className="gradient-container"></div>
-      <Navbar />
       <div className="relative overflow-hidden h-screen ">
         <div className="flex items-center justify-center h-full flex-col">
           <div className="text-center">

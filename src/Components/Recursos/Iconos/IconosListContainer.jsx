@@ -37,8 +37,8 @@ const IconoListContainer = () => {
   return (
     <section>
       <div></div>
-      <div className="text-center font-bold text-white text-2xl mt-2">
-        <h1>Explora la seccion Fuentes</h1>
+      <div className="text-center font-bold text-white text-2xl mt-4">
+        <h1>Explora la seccion Iconos</h1>
       </div>
       {loading ? (
         <section className="md2:mx-3 sm:mx-3 md2:my-3">

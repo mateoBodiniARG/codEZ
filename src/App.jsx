@@ -13,10 +13,16 @@ import AprenderListContainer from "./Components/Recursos/Aprender/AprenderListCo
 import FontsListContainer from "./Components/Recursos/Fonts/FontsListContainer";
 import EditResources from "./Components/AddResources/EditResources";
 import NotFound from "./Components/NotFound/NotFound";
+import Navbar from "./Components/Navbar/Navbar";
 function App() {
   return (
     <>
       <BrowserRouter>
+        <nav>
+          <div className="gradient-containerV2"></div>
+
+          <Navbar />
+        </nav>
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/info" element={<Info />} />

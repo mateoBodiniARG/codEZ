@@ -13,12 +13,13 @@ const Navbar = () => {
             <div className="text-white font-bold text-xl">codEZ</div>
           </div>
         </Link>
-        <div className="flex items-center">
-          <FaCircleInfo className="w-5 h-5 " />
-          <Link to={"/info"}>
+
+        <Link to={"/info"}>
+          <div className="flex items-center">
+            <FaCircleInfo className="w-5 h-5 " />
             <p className="text-white mx-2 text-lg">Info</p>
-          </Link>
-        </div>
+          </div>
+        </Link>
       </div>
     </nav>
   );
