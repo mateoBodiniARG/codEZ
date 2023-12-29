@@ -31,7 +31,7 @@ function App() {
           <Route path="/iconos" element={<IconosListContainer />} />
           <Route path="/inspiracion" element={<InspiracionListContainer />} />
           <Route path="/fotos" element={<FotosListContainer />} />
-          <Route path="/ilustracion" element={<IlustracionListContainer />} />
+          <Route path="/ilustraciones" element={<IlustracionListContainer />} />
           <Route path="/colores" element={<ColoresListContainer />} />
           <Route path="/aprender" element={<AprenderListContainer />} />
           <Route path="/fuentes" element={<FontsListContainer />} />

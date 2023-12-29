@@ -37,7 +37,7 @@ const AprenderListContainer = () => {
   return (
     <section>
       <div></div>
-      <div className="text-center font-bold text-white text-2xl mt-4">
+      <div className="text-center font-bold text-white text-3xl mt-8 mb-4">
         <h1>Explora la seccion Aprender</h1>
       </div>
       {loading ? (

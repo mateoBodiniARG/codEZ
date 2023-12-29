@@ -19,7 +19,7 @@ export const recursosObj = {
     {
       nombre: "Ilustracion",
       icono: <HiOutlinePaintBrush />,
-      link: "/ilustracion",
+      link: "/ilustraciones",
     },
     { nombre: "Fotos", icono: <TbPhotoSearch />, link: "/fotos" },
   ],
