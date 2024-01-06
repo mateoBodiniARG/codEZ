@@ -23,8 +23,8 @@ export default {
       screens: {
         xs: { max: "480px" },
         md2: { max: "640px" },
-        max9: { max: "899px" },
-        min9: { min: "900px" },
+        max9: { max: "969px" },
+        min9: { min: "970px" },
       },
     },
     fontFamily: {

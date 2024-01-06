@@ -20,8 +20,8 @@ const Inicio = () => {
               haciendo que aprender y crear sean Accesibles y Emocionantes.
             </p>
           </div>
-          <span className="animate-fade-in-up-1s"> 
-          <PiCaretDoubleDown className="h-7 w-7 mt-7 animate-bounce" />
+          <span className="animate-fade-in-up-1s">
+            <PiCaretDoubleDown className="h-7 w-7 mt-7 animate-bounce" />
           </span>
         </div>
       </div>

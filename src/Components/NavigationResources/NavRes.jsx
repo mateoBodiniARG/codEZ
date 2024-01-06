@@ -42,7 +42,7 @@ const NavRes = () => {
         </div>
       )}
 
-      <ul className="hidden md:flex justify-center space-x-4 md:space-x-0 bg-black max-w-5xl mx-auto rounded-full border border-gray-900 py-2 max9:hidden">
+      <ul className="hidden md:flex justify-center space-x-0 md:space-x-3 bg-black max-w-5xl mx-auto rounded-full border border-gray-900 py-2 max9:hidden">
         {recursosObj.recursos.map((recurso) => (
           <Link to={recurso.link} key={recurso.nombre}>
             <li
